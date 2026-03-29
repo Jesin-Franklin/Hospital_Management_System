@@ -1,0 +1,96 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #50e3c2;
+  --dark-color: #2c3e50;
+  --light-color: #f4f7f6;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: var(--dark-color);
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+}
+
+.btn-primary-custom {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(80, 227, 194, 0.4);
+  color: white;
+}
+
+.navbar-custom {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+.stat-card h3 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Sidebar styling for dashboard */
+.sidebar {
+  height: 100vh;
+  background: white;
+  border-right: 1px solid #eaeaea;
+}
+.sidebar .nav-link {
+  color: var(--dark-color);
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+}
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Custom Input Fields */
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(80, 227, 194, 0.25);
+}
